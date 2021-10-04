@@ -15,17 +15,28 @@ int main(){
 	printf("请输入b：\n");
 	for(int j = 0; j < n; j++)
 		scanf("%lf", &b[j]);
-	
-	printf("初始输入数据：");	
-	printf("\n");	
-	for(int i = 0; i < n; i++){
-		for(int j = 0; j< n; j++)
-			printf("%6.1f",a[i][j]);
-		printf("\n");
-	}
 		
-	for(int j = 0; j < n; j++)
-		printf("%6.1f", b[j]);
+	// 判断第一行第一列是否为0  若不为了就换行 
+	for(int i = 1; i < n; i++){
+		if((a[0][0] == 0.0) && (a[i][0] != 0.0)){
+			// 互换两行
+			double tempA[n];
+			for(int j = 0; j < n; j++){
+				tempA[j] = a[0][j];
+				a[0][j] = a[i][0];
+				a[i][0] = tempA[j];
+			}
+			double tempB = b[0];
+			b[0] = b[i];
+			b[i] = tempB;
+			break;	
+		}	
+	} 
+	if(a[0][0]==0){        // 经过上面的操作  如果a[0][0]==0的话，说明第0列全为0  所以有无穷解 
+		printf("该矩阵有无穷解！");
+		return 0;
+	}
+	
 	
 	printf("\n");
 	for(int k = 1; k < n; k++){
@@ -69,7 +80,7 @@ int main(){
 	printf("结果x:");
 	printf("\n");
 	for(int i = 0; i < n; i++)
-		printf("x[%d] = %5.1f",i, x[i]);
+		printf("x[%d] = %2.1f  ",i, x[i]);
 
 	return 0;
 }
