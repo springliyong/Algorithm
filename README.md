@@ -10,3 +10,6 @@ Date:2021/10/06
 LUSolution.cpp
   数值分析第二次作业，代码实现矩阵A=LU，Ly=b，Ux=y.
   ![64f473f942228898561d261b879caff](https://user-images.githubusercontent.com/56022450/136193667-06519829-3b83-45f9-bb3d-249a3f87b3cf.png)
+
+Date:2021/10/19
+![2PT{LWE T8LNTV0V{%OBXFC](https://user-images.githubusercontent.com/56022450/137831393-b9e8b39b-1075-4957-a4ed-e0f9d15eb269.png)
